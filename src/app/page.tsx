@@ -16,6 +16,19 @@ const skus = [
   ["EAF250", "A-MATRX Micrograft X-Large", "250 mg"]
 ];
 
+const productPhotos = [
+  {
+    src: "/media/product-flakes-side.jpg",
+    title: "Particulate matrix format",
+    body: "A physical micrograft configuration designed for placement, distribution, and contouring based on site characteristics."
+  },
+  {
+    src: "/media/product-flakes-top.jpg",
+    title: "Dry, ready-to-use handling",
+    body: "Supplied dehydrated for use according to sterile technique, product labeling, and clinician judgment."
+  }
+];
+
 export default function Home() {
   return (
     <main className="site-shell">
@@ -100,6 +113,29 @@ export default function Home() {
         <div className="wrap powered-inner">
           <span>Powered by</span>
           <img src="/brand/evologics-logo-wide.png" alt="Evologics evolving biologics" />
+        </div>
+      </section>
+
+      <section className="product-photo-section" aria-labelledby="product-format">
+        <div className="wrap product-photo-grid">
+          <div className="section-heading reveal">
+            <p className="eyebrow">Product Format</p>
+            <h2 id="product-format">A tangible micrograft format, shown with real product photography.</h2>
+            <p>
+              These product views introduce the physical material without turning the page into a catalog. The emphasis stays on format, handling, and clinical control.
+            </p>
+          </div>
+          <div className="photo-stack reveal delay-1">
+            {productPhotos.map((photo, index) => (
+              <article className={`photo-card photo-${index + 1}`} key={photo.title}>
+                <img src={photo.src} alt={photo.title} />
+                <div>
+                  <h3>{photo.title}</h3>
+                  <p>{photo.body}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
