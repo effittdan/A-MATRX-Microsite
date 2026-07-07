@@ -1,10 +1,8 @@
-import { MatrixField } from "./components/MatrixField";
-
 const features = [
-  ["Complex anatomy", "A micrograft configuration can help clinicians address sites where broad sheet placement may be less practical."],
-  ["Targeted coverage", "Matrix material may be placed where additional tissue coverage is appropriate, based on clinician judgment and IFU guidance."],
-  ["Efficient handling", "Supplied ready to use, with no refrigeration requirement and ambient temperature storage."],
-  ["Dry application", "May be applied dry at the surgical and/or wound site depending on clinician technique and product labeling."]
+  ["Human placental tissue matrix", "Derived from donated human placental tissue and processed into a dehydrated matrix format."],
+  ["Micrograft configuration", "Designed for targeted placement, distribution, layering, and contouring at the site."],
+  ["Dry application", "Supplied in a dry format to support efficient surgical and wound management workflows."],
+  ["Ambient storage", "No refrigeration required, with multiple configurations for different site requirements."]
 ];
 
 const settings = ["Obstetrics", "Gynecology", "Plastic Surgery", "Podiatry", "General Wound Care", "Surgical Wound Care"];
@@ -12,21 +10,31 @@ const settings = ["Obstetrics", "Gynecology", "Plastic Surgery", "Podiatry", "Ge
 const skus = [
   ["EAF40", "A-MATRX Micrograft Small", "40 mg"],
   ["EAF80", "A-MATRX Micrograft Medium", "80 mg"],
-  ["EAF160", "A-MATRX Micrograft Large", "160 mg"],
-  ["EAF250", "A-MATRX Micrograft X-Large", "250 mg"]
+  ["EAF160", "A-MATRX Micrograft Large", "160 mg"]
 ];
 
 const productPhotos = [
   {
-    src: "/media/product-flakes-side.jpg",
-    title: "Particulate matrix format",
-    body: "A physical micrograft configuration designed for placement, distribution, and contouring based on site characteristics."
+    src: "/media/am-jar-flakes-01.jpg",
+    title: "Jar and micrograft format",
+    body: "A dry, conformable micrograft presentation designed around targeted placement and controlled handling."
   },
   {
-    src: "/media/product-flakes-top.jpg",
-    title: "Dry, ready-to-use handling",
-    body: "Supplied dehydrated for use according to sterile technique, product labeling, and clinician judgment."
+    src: "/media/am-solo-02.jpg",
+    title: "Micrograft texture",
+    body: "The physical format supports distribution, layering, and contouring based on site characteristics."
+  },
+  {
+    src: "/media/am-jar-02.jpg",
+    title: "Ready-to-use presentation",
+    body: "A-MATRX is supplied for use according to sterile technique, product labeling, and clinician judgment."
   }
+];
+
+const categoryCards = [
+  ["Not a hemostat", "A-MATRX is not intended as a hemostatic agent and should not be positioned for bleeding control."],
+  ["Not collagen-only powder", "A-MATRX is derived from human placental tissue, not a collagen-only or animal-derived powder."],
+  ["Not synthetic filler", "A-MATRX is a human tissue matrix micrograft for targeted tissue coverage when appropriate."]
 ];
 
 export default function Home() {
@@ -38,7 +46,8 @@ export default function Home() {
             <img src="/brand/a-matrx-logo-wide.png" alt="A-MATRX Micrograft" />
           </a>
           <nav aria-label="Page navigation">
-            <a href="#matrix">Matrix</a>
+            <a href="#product">Product</a>
+            <a href="#matrix">Science</a>
             <a href="#workflow">Workflow</a>
             <a href="#sizes">Sizes</a>
             <a href="#quality">Quality</a>
@@ -47,16 +56,16 @@ export default function Home() {
 
         <div className="hero-grid wrap">
           <div className="hero-copy-panel reveal">
-            <p className="eyebrow">Dehydrated placental tissue matrix allograft</p>
+            <p className="eyebrow">Human placental tissue matrix micrograft</p>
             <img className="hero-logo" src="/brand/a-matrx-logo-final.png" alt="A-MATRX Micrograft" />
-            <h1>Placental tissue matrix, reimagined for precision coverage.</h1>
+            <h1>Human placental tissue matrix in a conformable micrograft format.</h1>
             <p className="hero-copy">
-              A-MATRX Micrograft is supplied in a ready-to-use micrograft configuration for surgical and wound management settings where additional tissue coverage may be appropriate, consistent with the Instructions for Use and clinician judgment.
+              A-MATRX Micrograft is a dehydrated human placental tissue matrix designed for targeted placement, adaptable handling, and site-specific tissue coverage in surgical and wound management settings.
             </p>
             <div className="proof-rule">
-              <span>Built for complex sites.</span>
-              <span>Designed for clinical control.</span>
-              <span>Ready when you are.</span>
+              <span>The precision of a micrograft.</span>
+              <span>The structure of human placental tissue.</span>
+              <span>Same trusted tissue concept. More precise placement.</span>
             </div>
             <div className="powered-badge" aria-label="Powered by Evologics">
               <span>Powered by</span>
@@ -72,39 +81,18 @@ export default function Home() {
             </div>
           </div>
 
-          <aside className="motion-stage" aria-label="Animated micrograft matrix visualization">
-            <MatrixField />
-            <div className="geometry-fallback" aria-hidden="true">
-              <svg viewBox="0 0 560 430">
-                <path className="matrix-surface" d="M78 246 C112 106 230 72 342 112 C472 158 502 272 432 352 C360 434 185 384 116 330 C83 304 65 294 78 246Z" />
-                <g className="matrix-lines">
-                  <path d="M108 270 176 174 278 112 400 160 456 270 404 346 258 372 142 318Z" />
-                  <path d="M176 174 258 372 400 160 142 318 456 270 278 112 404 346 108 270" />
-                  <path d="M128 306 226 148 428 204 336 372 176 174 404 346" />
-                  <path d="M226 148 336 372 108 270 428 204 258 372 128 306" />
-                </g>
-                <g className="matrix-nodes">
-                  {[["108", "270"], ["176", "174"], ["278", "112"], ["400", "160"], ["456", "270"], ["404", "346"], ["258", "372"], ["142", "318"], ["226", "148"], ["428", "204"], ["336", "372"], ["128", "306"]].map(([cx, cy], index) => (
-                    <circle cx={cx} cy={cy} r={index % 3 === 0 ? "8" : "6"} key={`${cx}-${cy}`} />
-                  ))}
-                </g>
-              </svg>
+          <aside className="product-hero-stage" aria-label="A-MATRX product packaging and micrograft jar">
+            <div className="hero-product-card hero-box-card">
+              <img src="/media/am-box-front.jpg" alt="A-MATRX Micrograft finished box" />
             </div>
-            <div className="stage-overlay">
-              <div>
-                <span>Structural ECM</span>
-                <strong>Native matrix architecture</strong>
-              </div>
-              <div>
-                <span>Format</span>
-                <strong>Moldable micrograft</strong>
-              </div>
+            <div className="hero-product-card hero-jar-card">
+              <img src="/media/am-jar-flakes-02.jpg" alt="A-MATRX Micrograft jar with product material" />
             </div>
-            <div className="floating-specs">
-              <div><strong>Dry</strong><span>application</span></div>
-              <div><strong>3 yr</strong><span>shelf life</span></div>
-              <div><strong>4</strong><span>fill options</span></div>
+            <div className="hero-product-card hero-flake-card">
+              <img src="/media/am-solo-01.jpg" alt="A-MATRX Micrograft material texture" />
             </div>
+            <div className="product-orbit product-orbit-a" />
+            <div className="product-orbit product-orbit-b" />
           </aside>
         </div>
       </section>
@@ -116,13 +104,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="product-photo-section" aria-labelledby="product-format">
+      <section className="product-photo-section" id="product" aria-labelledby="product-format">
         <div className="wrap product-photo-grid">
           <div className="section-heading reveal">
             <p className="eyebrow">Product Format</p>
-            <h2 id="product-format">A tangible micrograft format, shown with real product photography.</h2>
+            <h2 id="product-format">Not a powder. Not a hemostat. A placental matrix micrograft.</h2>
             <p>
-              These product views introduce the physical material without turning the page into a catalog. The emphasis stays on format, handling, and clinical control.
+              A-MATRX brings the familiar handling advantages of particulate-style surgical products into a human placental tissue matrix format. The emphasis is targeted placement, conformability, and structural tissue coverage.
             </p>
           </div>
           <div className="photo-stack reveal delay-1">
@@ -139,17 +127,28 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="category-section">
+        <div className="wrap category-grid">
+          {categoryCards.map(([title, body]) => (
+            <article className="category-card" key={title}>
+              <h3>{title}</h3>
+              <p>{body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="content-section" id="matrix">
         <div className="wrap section-grid">
           <div className="section-heading reveal">
-            <p className="eyebrow">A Structural Matrix</p>
-            <h2>Targeted tissue coverage for nuanced clinical sites.</h2>
+            <p className="eyebrow">A New Category Story</p>
+            <h2>Surgical teams already understand particulate formats.</h2>
           </div>
           <div className="section-copy reveal delay-1">
             <p>
-              A-MATRX Micrograft is produced from donated placental tissue and contains structural extracellular matrix proteins native to the source tissue. The particulate format supports controlled placement across complex, irregular, or anatomically nuanced areas.
+              Across the operating room and wound care environment, clinicians are familiar with powder, particulate, and matrix-based products. A-MATRX enters this familiar handling universe with a distinct identity: a human placental tissue matrix supplied in a micrograft format for targeted coverage.
             </p>
-            <div className="quote-card">A-MATRX delivers placental tissue matrix in a format that adapts to the site, not the other way around.</div>
+            <div className="quote-card">A-MATRX is the geometry evolution of EvoPatch: the same human placental tissue matrix concept, now in a micrograft format for targeted placement and conformable coverage.</div>
           </div>
         </div>
       </section>
@@ -170,9 +169,9 @@ export default function Home() {
         <div className="wrap band-grid">
           <div className="band-copy reveal">
             <p className="eyebrow">Conformable by Design</p>
-            <h2>When sheet placement is not the whole story.</h2>
+            <h2>Because surgical sites are rarely flat.</h2>
             <p>
-              Some sites require a matrix that can be distributed, contoured, layered, or placed with more granular control. A-MATRX gives clinicians a placental tissue matrix option designed for cases where site geometry, handling preference, or procedural workflow calls for an adaptable format.
+              Anatomy does not always present as a clean rectangle. A-MATRX supports controlled placement into areas where contour, contact, and coverage are important, allowing clinicians to distribute, layer, and contour the tissue matrix according to the site and procedural plan.
             </p>
           </div>
           <div className="orbit-graphic reveal delay-1" aria-hidden="true">
@@ -209,7 +208,7 @@ export default function Home() {
         <div className="wrap section-grid">
           <div className="section-heading reveal">
             <p className="eyebrow">Potential Clinical Settings</p>
-            <h2>Designed for surgical and wound management workflows.</h2>
+            <h2>A format designed around the site.</h2>
           </div>
           <div className="settings-grid reveal delay-1">
             {settings.map((setting) => (
@@ -246,15 +245,15 @@ export default function Home() {
         <div className="wrap quality-grid">
           <div className="reveal">
             <p className="eyebrow">Safety, Quality, and Compliance</p>
-            <h2>Processed with a focus on safety and quality.</h2>
+            <h2>Regulatory and use information.</h2>
             <p>
-              A-MATRX Micrograft is produced from donated human placental tissue and supplied as a human cells, tissues, and cellular and tissue-based product, or HCT/P. Use should be consistent with product Instructions for Use, applicable labeling, facility protocol, and clinician judgment.
+              A-MATRX Micrograft is produced from donated human placental tissue and supplied as a human cells, tissues, and cellular and tissue-based product, or HCT/P. Use is limited to homologous use and should be consistent with the product Instructions for Use, applicable labeling, clinician judgment, and institutional protocol.
             </p>
           </div>
           <aside className="compliance-card reveal delay-1">
             <strong>Compliance Statement</strong>
             <p>
-              A-MATRX Micrograft is an HCT/P regulated under Section 361 of the Public Health Service Act and 21 CFR Part 1271. It is intended for homologous use only, consistent with the Instructions for Use. A-MATRX Micrograft has not been cleared or approved by the FDA.
+              A-MATRX Micrograft is an HCT/P regulated under Section 361 of the Public Health Service Act and 21 CFR Part 1271. A-MATRX Micrograft is not intended for use as a hemostatic agent and should not be used as a substitute for meticulous surgical technique or conventional methods of hemostasis.
             </p>
           </aside>
         </div>
@@ -263,8 +262,8 @@ export default function Home() {
       <section className="cta-section">
         <div className="wrap cta-grid">
           <div className="reveal">
-            <p className="eyebrow">Bring Precision Matrix Coverage Into Your Workflow</p>
-            <h2>Request product information, available sizes, ordering details, and clinical support materials.</h2>
+            <p className="eyebrow">Bring Placental Matrix Coverage Into Focus</p>
+            <h2>For complex sites, irregular anatomy, and targeted coverage needs.</h2>
           </div>
           <div className="actions reveal delay-1">
             <a className="primary-action gold" href="mailto:info@evologicsamerica.com?subject=Request%20A-MATRX%20Product%20Sheet">

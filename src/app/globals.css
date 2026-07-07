@@ -285,6 +285,104 @@ h3 {
   color: var(--surface);
 }
 
+.product-hero-stage {
+  position: relative;
+  min-height: 640px;
+  border: 1px solid rgba(31, 79, 69, 0.18);
+  border-radius: 8px;
+  background:
+    linear-gradient(142deg, rgba(255, 255, 255, 0.58), rgba(237, 243, 239, 0.86)),
+    url("/media/matrix-background-portrait.jpg") center / cover no-repeat;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.product-hero-stage::before {
+  content: "";
+  position: absolute;
+  inset: 28px;
+  z-index: 5;
+  border: 1px solid rgba(31, 79, 69, 0.13);
+  border-radius: 6px;
+  pointer-events: none;
+}
+
+.product-hero-stage::after {
+  content: "PLACENTAL MATRIX MICROGRAFT";
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  z-index: 6;
+  color: rgba(31, 79, 69, 0.48);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: translateY(-50%);
+}
+
+.hero-product-card {
+  position: absolute;
+  z-index: 3;
+  border: 1px solid rgba(31, 79, 69, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 24px 70px rgba(31, 79, 69, 0.17);
+  overflow: hidden;
+  animation: productFloat 7s ease-in-out infinite;
+}
+
+.hero-product-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-box-card {
+  top: 34px;
+  right: 46px;
+  width: 60%;
+  height: 42%;
+}
+
+.hero-jar-card {
+  left: 36px;
+  bottom: 48px;
+  width: 64%;
+  height: 47%;
+  animation-delay: 220ms;
+}
+
+.hero-flake-card {
+  right: 60px;
+  bottom: 70px;
+  width: 34%;
+  height: 28%;
+  animation-delay: 460ms;
+}
+
+.product-orbit {
+  position: absolute;
+  z-index: 1;
+  border: 1px solid rgba(31, 79, 69, 0.18);
+  border-radius: 48% 52% 45% 55%;
+  animation: orbit 24s linear infinite;
+}
+
+.product-orbit-a {
+  inset: 84px 52px 106px 34px;
+}
+
+.product-orbit-b {
+  inset: 132px 18px 72px 96px;
+  border-color: rgba(201, 178, 126, 0.34);
+  animation-duration: 32s;
+  animation-direction: reverse;
+}
+
 .motion-stage {
   position: relative;
   min-height: 630px;
@@ -489,9 +587,9 @@ h3 {
 
 .photo-stack {
   display: grid;
-  grid-template-columns: 0.86fr 1fr;
+  grid-template-columns: 0.82fr 1fr 0.82fr;
   gap: 16px;
-  align-items: end;
+  align-items: center;
 }
 
 .photo-card {
@@ -545,11 +643,48 @@ h3 {
 }
 
 .photo-1 {
-  margin-bottom: 38px;
+  margin-bottom: 42px;
 }
 
 .photo-2 img {
   height: 430px;
+}
+
+.photo-3 {
+  margin-top: 38px;
+}
+
+.category-section {
+  padding: 0 0 82px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.52), rgba(237, 243, 239, 0.8));
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.category-card {
+  min-height: 190px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 18px 42px rgba(31, 79, 69, 0.07);
+  backdrop-filter: blur(14px);
+}
+
+.category-card h3 {
+  color: var(--primary-deep);
+}
+
+.category-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.58;
 }
 
 .content-section {
@@ -881,6 +1016,16 @@ h3 {
   }
 }
 
+@keyframes productFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
 @keyframes traceLine {
   0% {
     stroke-dashoffset: 320;
@@ -925,16 +1070,55 @@ h3 {
     padding-top: 44px;
   }
 
+  .hero-copy-panel {
+    width: 100%;
+    max-width: 312px;
+    overflow: hidden;
+  }
+
+  .hero-logo {
+    max-width: 312px;
+  }
+
+  h1,
+  .hero-copy,
+  .proof-rule {
+    max-width: 100%;
+  }
+
+  h1,
+  .hero-copy,
+  .proof-rule {
+    overflow-wrap: anywhere;
+  }
+
+  .product-hero-stage {
+    min-height: 600px;
+  }
+
   .feature-grid,
   .photo-stack,
+  .category-grid,
   .workflow {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .photo-3 {
+    grid-column: 1 / -1;
+    margin-top: 0;
   }
 }
 
 @media (max-width: 700px) {
   .wrap {
     width: calc(100% - 32px);
+  }
+
+  .site-nav.wrap,
+  .hero-grid.wrap {
+    width: calc(100vw - 32px);
+    max-width: calc(100vw - 32px);
+    overflow: hidden;
   }
 
   .site-nav {
@@ -962,32 +1146,39 @@ h3 {
   }
 
   .hero-logo {
-    width: min(350px, 100%);
+    width: 100%;
+    max-width: 312px;
   }
 
   .hero-copy-panel {
     width: 100%;
-    max-width: 100%;
+    max-width: 312px;
     overflow: hidden;
   }
 
   h1 {
-    font-size: 29px;
+    font-size: 26px;
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: anywhere;
   }
 
   h2 {
     font-size: 34px;
+    overflow-wrap: anywhere;
   }
 
   .hero-copy {
     max-width: calc(100vw - 48px);
     font-size: 15px;
-    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
   }
 
   .proof-rule {
     grid-template-columns: 72px 1fr;
     font-size: 15px;
+    max-width: 100%;
+    overflow-wrap: anywhere;
   }
 
   .actions {
@@ -1004,10 +1195,40 @@ h3 {
   }
 
   .motion-stage,
-  .matrix-canvas {
+  .matrix-canvas,
+  .product-hero-stage {
     width: 100%;
     max-width: 100%;
     min-height: 520px;
+  }
+
+  .product-hero-stage::after {
+    display: none;
+  }
+
+  .product-hero-stage::before {
+    inset: 18px;
+  }
+
+  .hero-box-card {
+    top: 24px;
+    right: 22px;
+    width: 74%;
+    height: 34%;
+  }
+
+  .hero-jar-card {
+    left: 18px;
+    bottom: 30px;
+    width: 82%;
+    height: 43%;
+  }
+
+  .hero-flake-card {
+    right: 18px;
+    bottom: 54px;
+    width: 42%;
+    height: 22%;
   }
 
   .geometry-fallback {
@@ -1056,6 +1277,7 @@ h3 {
 
   .feature-grid,
   .photo-stack,
+  .category-grid,
   .workflow,
   .settings-grid {
     grid-template-columns: 1fr;
@@ -1081,6 +1303,14 @@ h3 {
 
   .photo-1 {
     margin-bottom: 0;
+  }
+
+  .photo-3 {
+    grid-column: auto;
+  }
+
+  .category-section {
+    padding-bottom: 62px;
   }
 
   .photo-card img,
