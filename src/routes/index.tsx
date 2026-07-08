@@ -4,6 +4,7 @@ import {
   Menu,
   X,
   ArrowRight,
+  ChevronDown,
   Layers,
   Target,
   Sparkles,
@@ -83,6 +84,33 @@ const NAV = [
   { href: "#sizes", label: "Sizes" },
   { href: "#faq", label: "FAQ" },
   { href: "#contact", label: "Contact" },
+];
+
+const SPECIALTIES = [
+  "Wound Care",
+  "Podiatry",
+  "General Surgery",
+  "Plastic & Reconstructive Surgery",
+  "Orthopedic Surgery",
+  "Spine Surgery",
+  "Neurosurgery",
+  "Vascular Surgery",
+  "Cardiothoracic Surgery",
+  "Colorectal Surgery",
+  "Trauma Surgery",
+  "Burn Care",
+  "Dermatology",
+  "Obstetrics & Gynecology",
+  "Urology",
+  "ENT / Otolaryngology",
+  "Oral & Maxillofacial Surgery",
+  "Pain Management",
+  "Sports Medicine",
+  "Family Medicine",
+  "Internal Medicine",
+  "Emergency Medicine",
+  "Long-Term Care",
+  "Other",
 ];
 
 function LandingPage() {
@@ -1235,7 +1263,7 @@ function Contact() {
               <Field label="Phone" name="phone" type="tel" maxLength={40} />
               <Field label="Facility" name="facility" maxLength={160} />
               <div className="sm:col-span-2">
-                <Field label="Specialty" name="specialty" maxLength={160} />
+                <SpecialtyField />
               </div>
             </div>
             <div>
@@ -1281,6 +1309,32 @@ function Contact() {
         </div>
       </div>
     </section>
+  );
+}
+
+function SpecialtyField() {
+  return (
+    <div>
+      <Label htmlFor="specialty" className="text-sm font-medium text-foreground">
+        Specialty
+      </Label>
+      <div className="relative mt-2">
+        <select
+          id="specialty"
+          name="specialty"
+          className="h-10 w-full appearance-none rounded-xl border border-hairline bg-background px-3 pr-10 text-sm text-foreground outline-none transition-colors focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-primary/20"
+          defaultValue=""
+        >
+          <option value="">Select a specialty</option>
+          {SPECIALTIES.map((specialty) => (
+            <option key={specialty} value={specialty}>
+              {specialty}
+            </option>
+          ))}
+        </select>
+        <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+      </div>
+    </div>
   );
 }
 
