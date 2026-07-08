@@ -1134,7 +1134,7 @@ function Contact() {
   const [submitting, setSubmitting] = useState(false);
   const [contactMe, setContactMe] = useState(true);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
@@ -1155,12 +1155,27 @@ function Contact() {
       return;
     }
     setSubmitting(true);
-    setTimeout(() => {
+    try {
+      data.set("contact_me", contactMe ? "yes" : "no");
+      const response = await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(data as unknown as Record<string, string>).toString(),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Netlify form submission failed with status ${response.status}`);
+      }
+
       toast.success("Thanks — an Evologics representative will follow up shortly.");
       form.reset();
       setContactMe(true);
+    } catch (error) {
+      console.error(error);
+      toast.error("We could not submit the request. Please try again.");
+    } finally {
       setSubmitting(false);
-    }, 700);
+    }
   };
 
   return (
@@ -1200,9 +1215,20 @@ function Contact() {
 
         <div className="lg:col-span-7">
           <form
+            name="a-matrx-contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
             onSubmit={handleSubmit}
             className="grid gap-5 rounded-2xl border border-hairline bg-card p-6 shadow-[var(--shadow-card)] sm:p-8"
           >
+            <input type="hidden" name="form-name" value="a-matrx-contact" />
+            <p className="hidden">
+              <label>
+                Do not fill this out:
+                <input name="bot-field" tabIndex={-1} autoComplete="off" />
+              </label>
+            </p>
             <div className="grid gap-5 sm:grid-cols-2">
               <Field label="Name" name="name" required maxLength={120} />
               <Field label="Email" name="email" type="email" required maxLength={254} />
@@ -1248,7 +1274,8 @@ function Contact() {
             </Button>
             <p className="text-xs text-muted-foreground">
               By submitting, you consent to Evologics contacting you about A-MATRX Micrograft. Your
-              information is used to respond to your inquiry.
+              information is used to respond to your inquiry. Please do not include patient health
+              information.
             </p>
           </form>
         </div>
