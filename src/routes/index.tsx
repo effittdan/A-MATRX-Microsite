@@ -113,6 +113,8 @@ const SPECIALTIES = [
   "Other",
 ];
 
+const CONTACT_EMAIL = "theresa@evologicsamerica.com";
+
 function LandingPage() {
   const [navOpen, setNavOpen] = useState(false);
 
@@ -1162,6 +1164,28 @@ function Contact() {
   const [submitting, setSubmitting] = useState(false);
   const [contactMe, setContactMe] = useState(true);
 
+  const buildMailtoHref = (data: FormData) => {
+    const value = (field: string) => String(data.get(field) ?? "").trim();
+    const subjectName = value("name") || "Website visitor";
+    const lines = [
+      "A-MATRX product information request",
+      "",
+      `Name: ${value("name")}`,
+      `Email: ${value("email")}`,
+      `Phone: ${value("phone") || "Not provided"}`,
+      `Facility: ${value("facility") || "Not provided"}`,
+      `Specialty: ${value("specialty") || "Not provided"}`,
+      `Would like representative contact: ${contactMe ? "Yes" : "No"}`,
+      "",
+      "Message:",
+      value("message"),
+    ];
+
+    return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+      `A-MATRX product information request from ${subjectName}`,
+    )}&body=${encodeURIComponent(lines.join("\n"))}`;
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -1185,6 +1209,7 @@ function Contact() {
     setSubmitting(true);
     try {
       data.set("contact_me", contactMe ? "yes" : "no");
+      const mailtoHref = buildMailtoHref(data);
       const response = await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -1195,7 +1220,8 @@ function Contact() {
         throw new Error(`Netlify form submission failed with status ${response.status}`);
       }
 
-      toast.success("Thanks — an Evologics representative will follow up shortly.");
+      window.location.href = mailtoHref;
+      toast.success("Thanks — opening an email draft to Evologics.");
       form.reset();
       setContactMe(true);
     } catch (error) {
