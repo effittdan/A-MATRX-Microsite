@@ -1023,10 +1023,6 @@ function FAQ() {
       a: "A-MATRX Micrograft is a dehydrated human placental tissue matrix supplied in a conformable micrograft format for targeted tissue coverage in surgical and wound management settings.",
     },
     {
-      q: "Is A-MATRX the same as EvoFlakes?",
-      a: "A-MATRX Micrograft is the rebranded evolution of EvoFlakes, built from the same EvoPatch tissue platform and presented with a more precise identity around targeted placement and conformable coverage.",
-    },
-    {
       q: "Is A-MATRX a hemostat?",
       a: "No. A-MATRX is not intended for use as a hemostatic agent and should not be used as a substitute for conventional methods of hemostasis.",
     },
