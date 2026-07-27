@@ -896,9 +896,6 @@ function Sizes() {
                 <div className="h-2 w-2 rounded-full bg-primary/40 transition group-hover:bg-primary" />
               </div>
               <div className="mt-6 text-5xl font-extrabold tracking-tight text-primary">{size}</div>
-              <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-                Sterile. Dehydrated. Ready for use according to the Instructions for Use.
-              </p>
             </Card>
           ))}
         </div>
