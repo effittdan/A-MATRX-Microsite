@@ -57,7 +57,7 @@ export const Route = createFileRoute("/")({
       { property: "og:image", content: jarFlakes01.url },
       { name: "twitter:image", content: jarFlakes01.url },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://a-matrx.com/" }],
     scripts: [
       {
         type: "application/ld+json",
