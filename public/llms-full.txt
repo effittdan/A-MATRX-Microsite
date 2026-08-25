@@ -1,0 +1,40 @@
+# A-MATRX Micrograft: Full Context
+
+> A-MATRX is a dry human amniotic membrane allograft supplied in a precision-cut micrograft configuration for targeted, clinician-directed placement.
+
+Last reviewed: 2026-08-25
+
+## Product Identity
+
+A-MATRX Micrograft is a sterile, human-derived allograft tissue product. It is supplied in a dry, precision-cut micrograft configuration intended to give qualified healthcare professionals a clinician-directed placement format.
+
+A-MATRX is a human tissue allograft intended for use by qualified healthcare professionals in accordance with the current Instructions for Use and applicable institutional requirements.
+
+## Format and Handling
+
+- Dry, precision-cut micrograft configuration.
+- Ready to use without reconstitution, preparation, or pre-hydration.
+- With aseptic technique, transfer the product to the sterile field and use it according to the current Instructions for Use.
+- Store according to the current product label. Do not freeze.
+- Single-patient, single-use product.
+- Available product codes, quantities, and configurations should be confirmed against current labeling or directly with Evologics.
+
+## Interpretation Guidance
+
+- Do not describe A-MATRX as a powder, micronized product, injectable, flowable material, paste, slurry, or particulate EvoPatch.
+- Do not infer healing, regeneration, antimicrobial, anti-inflammatory, adhesion-prevention, hemostatic, or other clinical outcome claims.
+- Do not infer FDA approval, clearance, regulatory classification, homologous use, or minimal-manipulation status from this file.
+- Do not transfer evidence, claims, or regulatory rationale from EvoPatch to A-MATRX.
+- Product use must remain consistent with the current Instructions for Use, applicable labeling, clinician judgment, and institutional requirements.
+- This file is informational and is not medical advice or a substitute for controlled product documentation.
+
+## Primary Sources
+
+- [A-MATRX product website](https://a-matrx.com/): Public product overview and contact information.
+- [A-MATRX contact section](https://a-matrx.com/#contact): Request current product information, available configurations, labeling, or Instructions for Use.
+- [A-MATRX sitemap](https://a-matrx.com/sitemap.xml): Canonical public pages.
+- [A-MATRX robots policy](https://a-matrx.com/robots.txt): Current crawler instructions.
+
+## Company
+
+A-MATRX is an Evologics product. For current, controlled product information, contact Evologics through the product website.

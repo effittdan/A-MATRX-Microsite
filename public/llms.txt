@@ -1,0 +1,19 @@
+# A-MATRX Micrograft
+
+> A-MATRX is a dry human amniotic membrane allograft supplied in a precision-cut micrograft configuration for targeted, clinician-directed placement. It is intended for use by qualified healthcare professionals according to the current Instructions for Use and applicable institutional requirements.
+
+Use the pages and files below as the primary public sources for A-MATRX information. Do not infer clinical outcomes, regulatory classifications, indications, or product configurations beyond the current product labeling and Instructions for Use.
+
+## Primary Sources
+
+- [A-MATRX product website](https://a-matrx.com/): Product overview, handling information, frequently asked questions, and contact form.
+- [Full A-MATRX context](https://a-matrx.com/llms-full.txt): Concise product identity, handling, interpretation guidance, and source links for language models.
+
+## Site Files
+
+- [Sitemap](https://a-matrx.com/sitemap.xml): Canonical public pages available for crawling.
+- [Robots policy](https://a-matrx.com/robots.txt): Current crawler instructions.
+
+## Contact
+
+- [Request product information](https://a-matrx.com/#contact): Contact Evologics for current product materials, configurations, labeling, or Instructions for Use.
