@@ -263,7 +263,7 @@ function Hero() {
             <div className="mt-8 max-w-2xl space-y-4 text-[15px] leading-relaxed text-foreground/80 sm:text-base">
               <p>
                 A-MATRX Micrograft is a dehydrated human placental tissue matrix designed for
-                targeted placement, adaptable handling, and site-specific tissue coverage in
+                targeted placement, implantation, adaptable handling, and site-specific tissue coverage in
                 surgical and wound management settings.
               </p>
               <p>
@@ -483,9 +483,9 @@ function WhatIs() {
           <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-foreground/80 sm:text-base">
             <p>
               A-MATRX Micrograft is produced from dehydrated human placental tissue and supplied in
-              a dry, particulate micrograft format. It is designed to support clinician-directed
-              placement across complex, irregular, or anatomically nuanced sites where flat sheet
-              placement may not be ideal.
+              a dry, particulate micrograft format. It is designed to support targeted,
+              clinician-directed placement and implantation across complex, irregular, or
+              anatomically nuanced sites where flat sheet placement may not be ideal.
             </p>
             <p>
               The micrograft configuration allows clinicians to distribute, layer, and contour the
@@ -813,7 +813,7 @@ function Attributes() {
     {
       icon: Sparkles,
       title: "Micrograft configuration",
-      body: "Designed for targeted placement, distribution, layering, and contouring at the site.",
+      body: "Designed for targeted placement and implantation, with distribution, layering, and contouring according to the site.",
     },
     {
       icon: FlaskConical,
@@ -922,7 +922,7 @@ function Handling() {
     {
       icon: MapPin,
       title: "Place",
-      body: "Apply the micrograft matrix to the area where the clinician determines tissue coverage is appropriate.",
+      body: "Apply the micrograft matrix for implantation at the intended wound or surgical site, as determined by the clinician.",
     },
     {
       icon: Hand,
