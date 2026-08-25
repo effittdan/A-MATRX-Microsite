@@ -63,13 +63,20 @@ export const Route = createFileRoute("/")({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Product",
-          name: "A-MATRX Micrograft",
-          brand: { "@type": "Brand", name: "Evologics" },
+          "@type": "WebPage",
+          url: "https://a-matrx.com/",
+          name: "A-MATRX Micrograft — Human Placental Tissue Matrix | Evologics",
           description:
             "Human placental tissue matrix in a conformable micrograft format for targeted structural tissue coverage in surgical and wound management settings.",
-          image: jarFlakes01.url,
-          category: "Human placental tissue matrix (HCT/P)",
+          primaryImageOfPage: {
+            "@type": "ImageObject",
+            url: `https://a-matrx.com${jarFlakes01.url}`,
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "Evologics",
+            url: "https://www.evologicsamerica.com/",
+          },
         }),
       },
     ],
