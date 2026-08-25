@@ -1038,6 +1038,10 @@ function FAQ() {
       a: "Collagen powders are commonly collagen-based wound products. A-MATRX is a human placental tissue matrix micrograft designed for targeted structural tissue coverage.",
     },
     {
+      q: "Why is A-MATRX feather-light compared with powder products?",
+      a: "A-MATRX is supplied as a lightweight micrograft matrix rather than a conventional powder. Although each configuration has a labeled weight, product selection is based on the volume of tissue matrix and the intended coverage area, not a gram-for-gram comparison with denser powder products.",
+    },
+    {
       q: "When might clinicians consider A-MATRX?",
       a: "Clinicians may consider A-MATRX when a case calls for targeted tissue matrix coverage, conformable placement across irregular anatomy, or a dry human placental tissue matrix format.",
     },
