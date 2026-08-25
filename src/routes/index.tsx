@@ -880,6 +880,14 @@ function Sizes() {
         <div className="grid items-end gap-8 lg:grid-cols-12">
           <div className="lg:col-span-8">
             <SectionHeader eyebrow="Product Sizes" title="Available Configurations" />
+            <p className="mt-5 max-w-3xl text-[15px] leading-relaxed text-foreground/80 sm:text-base">
+              Because A-MATRX micrografts are feather-light, the labeled milligram quantity
+              identifies each configuration but does not provide a gram-for-gram comparison with
+              conventional powder products. Differences in material density and physical form make
+              direct comparisons with 1 g or 5 g powders difficult. Product selection should
+              instead consider the volume of micrograft material, the intended coverage area, site
+              geometry, and clinician judgment.
+            </p>
           </div>
           <div className="lg:col-span-4">
             <div className="overflow-hidden rounded-2xl border border-hairline bg-card">
