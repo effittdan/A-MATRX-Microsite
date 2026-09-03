@@ -40,16 +40,9 @@ import {
 import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
 
-import evologicsLogo from "@/assets/evologics-logo-wide.png.asset.json";
-import amatrxMark from "@/assets/amatrx-mark.png.asset.json";
-import bgTexture from "@/assets/bg-texture.png.asset.json";
-import boxFront from "@/assets/box-front.png.asset.json";
-import jar01 from "@/assets/jar-01.png.asset.json";
-import jar02 from "@/assets/jar-02.png.asset.json";
-import jar03 from "@/assets/jar-03.png.asset.json";
 import jarFlakes01 from "@/assets/jar-flakes-01.png.asset.json";
-import jarFlakes02 from "@/assets/jar-flakes-02.png.asset.json";
-import flakes02 from "@/assets/flakes-02.png.asset.json";
+
+const OPTIMIZED_MEDIA = "/media/optimized";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -158,7 +151,14 @@ function Nav({ navOpen, setNavOpen }: { navOpen: boolean; setNavOpen: (v: boolea
     <header className="fixed inset-x-0 top-0 z-50 border-b border-hairline bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
         <a href="#top" className="flex items-center gap-2">
-          <img src={evologicsLogo.url} alt="Evologics" className="h-8 w-auto sm:h-9" />
+          <img
+            src={`${OPTIMIZED_MEDIA}/evologics-logo-wide-640.webp`}
+            alt="Evologics"
+            width={640}
+            height={180}
+            decoding="async"
+            className="h-8 w-auto sm:h-9"
+          />
           <span className="sr-only">Evologics</span>
         </a>
         <nav className="hidden items-center gap-8 lg:flex">
@@ -220,9 +220,9 @@ function Hero() {
     <section id="top" className="relative overflow-hidden pt-24 sm:pt-28">
       <div className="pointer-events-none absolute inset-0 matrix-grid opacity-60" />
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.35] mix-blend-multiply"
+        className="pointer-events-none absolute inset-0 hidden opacity-[0.35] mix-blend-multiply sm:block"
         style={{
-          backgroundImage: `url(${bgTexture.url})`,
+          backgroundImage: `url(${OPTIMIZED_MEDIA}/bg-texture-1200.webp)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -246,11 +246,18 @@ function Hero() {
         className="relative mx-auto max-w-7xl px-5 pb-20 pt-12 sm:px-8 sm:pt-16 lg:pb-28"
       >
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-7 fade-in-up">
-            <img src={amatrxMark.url} alt="A-MATRX mark" className="mb-5 h-14 w-auto sm:h-16" />
-            <div className="inline-flex items-center gap-2 rounded-full border border-hairline bg-card px-3 py-1.5">
+          <div className="lg:col-span-7">
+            <img
+              src={`${OPTIMIZED_MEDIA}/amatrx-mark-128.webp`}
+              alt="A-MATRX mark"
+              width={128}
+              height={128}
+              decoding="async"
+              className="mb-5 h-14 w-auto sm:h-16"
+            />
+            <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-hairline bg-card px-3 py-1.5">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-              <span className="text-xs font-semibold tracking-wider text-primary uppercase">
+              <span className="min-w-0 text-xs leading-relaxed font-semibold tracking-wider text-primary uppercase">
                 Evologics · Human Placental Tissue Matrix
               </span>
             </div>
@@ -263,8 +270,8 @@ function Hero() {
             <div className="mt-8 max-w-2xl space-y-4 text-[15px] leading-relaxed text-foreground/80 sm:text-base">
               <p>
                 A-MATRX Micrograft is a dehydrated human placental tissue matrix designed for
-                targeted placement, implantation, adaptable handling, and site-specific tissue coverage in
-                surgical and wound management settings.
+                targeted placement, implantation, adaptable handling, and site-specific tissue
+                coverage in surgical and wound management settings.
               </p>
               <p>
                 Supplied in a dry micrograft configuration, A-MATRX gives clinicians a familiar
@@ -301,8 +308,14 @@ function Hero() {
           <div className="relative lg:col-span-5">
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-hairline bg-gradient-to-b from-primary-soft/60 to-background shadow-[0_30px_80px_-30px_oklch(0.36_0.075_148_/_0.35)]">
               <img
-                src={jarFlakes01.url}
+                src={`${OPTIMIZED_MEDIA}/jar-flakes-01-960.webp`}
+                srcSet={`${OPTIMIZED_MEDIA}/jar-flakes-01-640.webp 640w, ${OPTIMIZED_MEDIA}/jar-flakes-01-960.webp 960w`}
+                sizes="(min-width: 1024px) 40vw, 100vw"
                 alt="A-MATRX Micrograft jar with dehydrated human placental tissue matrix"
+                width={960}
+                height={960}
+                fetchPriority="high"
+                decoding="async"
                 className="absolute inset-0 h-full w-full object-cover"
               />
               <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-hairline bg-card/90 p-4 backdrop-blur">
@@ -503,22 +516,34 @@ function WhatIs() {
           <div className="grid grid-cols-2 gap-4">
             <div className="col-span-2 overflow-hidden rounded-2xl border border-hairline bg-card">
               <img
-                src={jar02.url}
+                src={`${OPTIMIZED_MEDIA}/jar-02-960.webp`}
                 alt="A-MATRX Micrograft open jar"
+                width={960}
+                height={960}
+                loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover"
               />
             </div>
             <div className="overflow-hidden rounded-2xl border border-hairline bg-card">
               <img
-                src={boxFront.url}
+                src={`${OPTIMIZED_MEDIA}/box-front-960.webp`}
                 alt="A-MATRX Micrograft product box"
+                width={960}
+                height={720}
+                loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover"
               />
             </div>
             <div className="overflow-hidden rounded-2xl border border-hairline bg-card">
               <img
-                src={flakes02.url}
+                src={`${OPTIMIZED_MEDIA}/flakes-02-960.webp`}
                 alt="A-MATRX micrograft flakes translucent"
+                width={960}
+                height={960}
+                loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -710,7 +735,7 @@ function Differentiation() {
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-[0.28] mix-blend-multiply"
         style={{
-          backgroundImage: `url(${bgTexture.url})`,
+          backgroundImage: `url(${OPTIMIZED_MEDIA}/bg-texture-1200.webp)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -743,8 +768,12 @@ function Differentiation() {
         <div className="lg:col-span-7">
           <div className="overflow-hidden rounded-3xl border border-hairline bg-card shadow-[var(--shadow-card)]">
             <img
-              src={jar03.url}
+              src={`${OPTIMIZED_MEDIA}/jar-03-960.webp`}
               alt="A-MATRX Micrograft jar"
+              width={960}
+              height={960}
+              loading="lazy"
+              decoding="async"
               className="h-96 w-full object-contain p-4 sm:h-[28rem]"
             />
           </div>
@@ -884,16 +913,20 @@ function Sizes() {
               Because A-MATRX micrografts are feather-light, the labeled milligram quantity
               identifies each configuration but does not provide a gram-for-gram comparison with
               conventional powder products. Differences in material density and physical form make
-              direct comparisons with 1 g or 5 g powders difficult. Product selection should
-              instead consider the volume of micrograft material, the intended coverage area, site
-              geometry, and clinician judgment.
+              direct comparisons with 1 g or 5 g powders difficult. Product selection should instead
+              consider the volume of micrograft material, the intended coverage area, site geometry,
+              and clinician judgment.
             </p>
           </div>
           <div className="lg:col-span-4">
             <div className="overflow-hidden rounded-2xl border border-hairline bg-card">
               <img
-                src={boxFront.url}
+                src={`${OPTIMIZED_MEDIA}/box-front-960.webp`}
                 alt="A-MATRX Micrograft box packaging"
+                width={960}
+                height={720}
+                loading="lazy"
+                decoding="async"
                 className="h-40 w-full object-cover"
               />
             </div>
@@ -1008,18 +1041,34 @@ function StorageWorkflow() {
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="overflow-hidden rounded-2xl border border-hairline bg-card">
               <img
-                src={boxFront.url}
+                src={`${OPTIMIZED_MEDIA}/box-front-960.webp`}
                 alt="A-MATRX packaging front"
+                width={960}
+                height={720}
+                loading="lazy"
+                decoding="async"
                 className="h-64 w-full object-cover"
               />
             </div>
             <div className="overflow-hidden rounded-2xl border border-hairline bg-card">
-              <img src={jar01.url} alt="A-MATRX jar" className="h-64 w-full object-cover" />
+              <img
+                src={`${OPTIMIZED_MEDIA}/jar-01-960.webp`}
+                alt="A-MATRX jar"
+                width={960}
+                height={960}
+                loading="lazy"
+                decoding="async"
+                className="h-64 w-full object-cover"
+              />
             </div>
             <div className="col-span-2 overflow-hidden rounded-2xl border border-hairline bg-card">
               <img
-                src={jarFlakes02.url}
+                src={`${OPTIMIZED_MEDIA}/jar-flakes-02-960.webp`}
                 alt="A-MATRX jar and flakes on surface"
+                width={960}
+                height={960}
+                loading="lazy"
+                decoding="async"
                 className="h-48 w-full object-cover"
               />
             </div>
@@ -1414,7 +1463,15 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <img src={evologicsLogo.url} alt="Evologics" className="h-20 w-auto" />
+            <img
+              src={`${OPTIMIZED_MEDIA}/evologics-logo-wide-640.webp`}
+              alt="Evologics"
+              width={640}
+              height={180}
+              loading="lazy"
+              decoding="async"
+              className="h-20 w-auto"
+            />
             <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
               A-MATRX Micrograft is a dehydrated human placental tissue matrix in a conformable
               micrograft format, built on the EvoPatch tissue platform for targeted structural
