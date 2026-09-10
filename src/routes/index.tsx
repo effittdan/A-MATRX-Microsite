@@ -39,6 +39,7 @@ import {
 } from "@/components/ui/accordion";
 import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
+import { trackGenerateLead } from "@/lib/analytics";
 
 import jarFlakes01 from "@/assets/jar-flakes-01.png.asset.json";
 
@@ -1281,6 +1282,7 @@ function Contact() {
         throw new Error(`Netlify form submission failed with status ${response.status}`);
       }
 
+      trackGenerateLead("a-matrx-product-information");
       window.location.href = mailtoHref;
       toast.success("Thanks — opening an email draft to Evologics.");
       form.reset();
