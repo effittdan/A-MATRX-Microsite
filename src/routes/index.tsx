@@ -84,6 +84,7 @@ const NAV = [
   { href: "#attributes", label: "Product Attributes" },
   { href: "#sizes", label: "Sizes" },
   { href: "#faq", label: "FAQ" },
+  { href: "/patients", label: "For Patients" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -162,7 +163,7 @@ function Nav({ navOpen, setNavOpen }: { navOpen: boolean; setNavOpen: (v: boolea
           />
           <span className="sr-only">Evologics</span>
         </a>
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-5 lg:flex">
           {NAV.map((item) => (
             <a
               key={item.href}
