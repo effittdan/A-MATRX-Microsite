@@ -4,3 +4,16 @@
 
 [build.environment]
   NODE_VERSION = "22"
+
+# Retired download: return a real 404 even if a future build reintroduces the asset.
+[[redirects]]
+  from = "/downloads/a-matrx-patient-brochure.pdf"
+  to = "/retired-download.html"
+  status = 404
+  force = true
+
+[[headers]]
+  for = "/downloads/a-matrx-patient-brochure.pdf"
+  [headers.values]
+    X-Robots-Tag = "noindex, noarchive"
+    Cache-Control = "no-store"

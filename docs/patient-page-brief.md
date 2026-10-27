@@ -11,7 +11,6 @@ Extension of the existing warm clinical site for patients preparing for surgery 
 - Product: public/media/optimized/jar-flakes-01-960.webp, existing website illustration.
 - Secondary brand: public/media/optimized/evologics-logo-wide-640.webp.
 - Font: public/fonts/manrope-latin.woff2.
-- Download: public/downloads/a-matrx-patient-brochure.pdf, exact copy of the six-page digital brochure approved in this conversation.
 
 ## Scope and preserved contracts
 New patient route and scoped stylesheet. One For Patients entry added to the existing NAV array, which supplies desktop, mobile and footer links. Desktop gap reduced to accommodate it. Existing homepage copy, anchors, form submission, analytics and regulatory sections preserved, including pre-existing uncommitted edits. No changes to the older Next.js alternative. Patient page primary action supports a surgeon conversation, not a sales inquiry. Native accordion disclosure; questions can be printed without the rest of the page.
@@ -32,6 +31,5 @@ Built and reviewed locally. The owner authorized GitHub push and Netlify publica
 - Production build, TypeScript no-emit check and ESLint for the new route passed.
 - Reviewed desktop and narrow mobile layout; no horizontal overflow observed. Mobile menu opens/closes and question anchor updates correctly; FAQ and safety disclosure expand.
 - Standard Vite preview cannot locate the Netlify server bundle (existing preset mismatch). A local Node preview invokes the generated Netlify handler and serves the built static assets; /patients and / return 200, as do photo, logos and PDF. No production-page console errors observed. Development-only Lovable data-tsd-source hydration warning is absent from this production preview.
-- Brochure download bytes match the supplied six-page digital PDF. Photos retain original aspect ratios and supplied colors.
 - Screenshot evidence: patient-preview/desktop.png and patient-preview/full-page.png.
 - These checks describe the local review before the authorized release.

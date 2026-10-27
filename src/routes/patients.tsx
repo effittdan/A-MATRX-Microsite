@@ -1,9 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Download, Menu, Printer, X } from "lucide-react";
+import { ArrowRight, Menu, Printer, X } from "lucide-react";
 import { useState } from "react";
 import "../patient-page.css";
 
-const BROCHURE = "/downloads/a-matrx-patient-brochure.pdf";
 const PHOTO = "/media/patients/doctor-patient-consultation.webp";
 const LOGO = "/media/patients/a-matrx-logo.png";
 const TITLE = "A-MATRX for Patients | Thoughtful Care, With You in Mind";
@@ -170,10 +169,6 @@ function PatientPage() {
               <div className="patient-actions">
                 <a className="patient-button" href="#questions">
                   Talk with your surgeon <ArrowRight size={18} aria-hidden="true" />
-                </a>
-                <a className="patient-text-link" href={BROCHURE} download>
-                  <Download size={18} aria-hidden="true" /> Patient brochure{" "}
-                  <span className="patient-file-label">PDF · 6 pages</span>
                 </a>
               </div>
             </div>
@@ -345,16 +340,13 @@ function PatientPage() {
                 procedure and care plan.
               </p>
               <p>
-                Take these questions to your next visit, or share the patient brochure with someone
-                helping you prepare.
+                Take these questions to your next visit, or share them with someone helping you
+                prepare.
               </p>
               <div className="patient-actions">
                 <button type="button" className="patient-button" onClick={() => window.print()}>
                   <Printer size={18} aria-hidden="true" /> Print these questions
                 </button>
-                <a href={BROCHURE} download className="patient-text-link">
-                  <Download size={18} aria-hidden="true" /> Download the brochure
-                </a>
               </div>
             </div>
             <ol className="patient-question-list">
@@ -433,7 +425,6 @@ function PatientPage() {
             </p>
             <div className="patient-footer-links">
               <a href="/">Healthcare professional information</a>
-              <a href={BROCHURE}>Patient brochure</a>
               <a href="https://www.evologicsamerica.com/">Evologics</a>
             </div>
             <p className="patient-copyright">
